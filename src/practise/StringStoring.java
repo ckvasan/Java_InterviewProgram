@@ -2,6 +2,8 @@ package practise;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 public class StringStoring {
@@ -9,6 +11,20 @@ public class StringStoring {
 	public static void main(String[] args) {
 		String text = "This is java program";
 		sortString(text);
+		wordsCount("big black bug bit a big black bear");
+	}
+
+	private static void wordsCount(String str) {
+		String[] words=  str.split("\\s");
+		Map<String, Integer> m = new HashMap<String, Integer>();
+		for (String w : words)
+		{
+			m.computeIfPresent(w, (k,v) -> v +1);
+			m.computeIfAbsent(w, k -> 1);
+			
+		}
+		
+		m.forEach((k,v) -> System.out.println( "The Word : '"+ k + "' occured: " +v +" times") );
 	}
 
 	private static void sortString(String text) {
