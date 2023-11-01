@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class StringStoring {
+public class StringManipulation {
 
 	public static void main(String[] args) {
 		String text = "This is java program";
